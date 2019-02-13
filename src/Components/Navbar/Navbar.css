@@ -1,0 +1,55 @@
+.nav a:hover {
+  color: #f9ff12;
+  text-decoration: none;
+  background-color: transparent !important;
+}
+
+.nav .active {
+  color: #f9ff12;
+  font-weight: 600;
+}
+.nav a {
+  margin: 0 0.5rem;
+  color: white;
+}
+.appname {
+  color: aqua;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 1rem;
+}
+.appname:hover {
+  text-decoration: none;
+  color: #f9ff12;
+}
+
+#Genredropdown {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  padding: 0px;
+  margin: 0 0.5em;
+  margin-bottom: 2px;
+}
+#Genredropdown:hover {
+  color: #f9ff12;
+}
+.dropdown-menu {
+  border: 0px;
+  background-color: #343a40 !important;
+}
+
+.dropdown-toggle .btn .btn-primary {
+  color: yellow !important;
+  font-weight: 600;
+}
+
+.dropdown-menu.show {
+  height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+.genre {
+  margin: 0.5 0.8em !important;
+}

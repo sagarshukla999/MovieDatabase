@@ -1,0 +1,17 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  display: none !important;
+}
+.alice-carousel__dots-item:hover,
+.alice-carousel__dots-item.__active {
+  background-color: #66fcf1 !important;
+}
+
+.alice-carousel__dots {
+  margin: 0px;
+}

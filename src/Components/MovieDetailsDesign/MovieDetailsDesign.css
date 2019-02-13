@@ -1,0 +1,44 @@
+body {
+  overflow-y: scroll;
+}
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.ContentContainer {
+  position: relative;
+  display: block;
+  background-color: white;
+  z-index: 1;
+}
+
+.Content {
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+p {
+  margin: 75px 0;
+}
+
+.ParallaxContainer {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: -1;
+  height: 100vh;
+  background-size: cover;
+  justify-content: center;
+  background-position: center;
+  /* align-items: center; */
+  transform: translateZ(-1px) scale(2);
+  background-color: rgb(250, 228, 216);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,800");

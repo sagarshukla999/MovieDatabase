@@ -1,0 +1,13 @@
+.page-link {
+  background-color: black !important;
+  color: aqua !important;
+}
+.page-item.active .page-link {
+  color: black !important;
+  background-color: aqua !important;
+  border-color: aqua !important;
+}
+
+.page-link:hover {
+  color: #f9ff12 !important;
+}

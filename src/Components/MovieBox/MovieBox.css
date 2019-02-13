@@ -1,0 +1,16 @@
+.moviebox {
+  width: 200px;
+  height: 300px;
+  margin: 5px;
+  display: inline-block !important;
+  border-radius: 1em !important;
+  border-color: aqua;
+}
+.moviebox img {
+  border-radius: 1em;
+  height: 100%;
+  cursor: pointer;
+}
+.moviebox:hover {
+  filter: brightness(0.7);
+}
