@@ -4,8 +4,8 @@ import Loading from "../../Components/Loading/Loading";
 import MovieDetailsDesign from "../../Components/MovieDetailsDesign/MovieDetailsDesign";
 
 const api_key = "d1a6c240f9c4dae2020c7d78070cccde";
-const url = "http://api.themoviedb.org/3/movie/";
-const basePosterURL = "http://image.tmdb.org/t/p/original/";
+const url = "https://api.themoviedb.org/3/movie/";
+const basePosterURL = "https://image.tmdb.org/t/p/original/";
 class MovieDetails extends Component {
   state = {
     movieinfo: {},

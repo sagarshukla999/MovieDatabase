@@ -8,8 +8,8 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const baseURL =
-  "http://api.themoviedb.org/3/discover/movie?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const basePosterURL = "http://image.tmdb.org/t/p/w185/";
+  "https://api.themoviedb.org/3/discover/movie?api_key=d1a6c240f9c4dae2020c7d78070cccde";
+const basePosterURL = "https://image.tmdb.org/t/p/w185/";
 class MovieGenre extends Component {
   state = {
     movies: []

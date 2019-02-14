@@ -10,7 +10,7 @@ import NoData from "../../Components/NoData/Nodata";
 
 const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
 const baseURL = "https://api.themoviedb.org/3";
-const basePosterURL = "http://image.tmdb.org/t/p/original/";
+const basePosterURL = "https://image.tmdb.org/t/p/original/";
 
 class SearchText extends Component {
   state = {
