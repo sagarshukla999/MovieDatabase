@@ -4,7 +4,7 @@ import "./MovieBox.css";
 
 const moviebox = props => (
   <Card className="moviebox">
-    <Card.Img variant="top" src={props.poster} />
+    <Card.Img variant="top" onLoad={props.isImageLoaded} src={props.poster} />
   </Card>
 );
 

@@ -11,3 +11,11 @@
 .page-link:hover {
   color: #f9ff12 !important;
 }
+
+.displaynone {
+  display: none !important;
+}
+
+.display {
+  display: block;
+}

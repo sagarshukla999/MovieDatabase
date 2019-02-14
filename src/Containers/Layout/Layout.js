@@ -49,10 +49,6 @@ class Layout extends Component {
     }
   };
   render() {
-    //   document.getElementById('searchForm').addEventListener('submit', function(e) {
-    //     search(document.getElementById('searchText'));
-    //     e.preventDefault()onKeyPress={this.handleKeyPress};
-    // }, false);
     return (
       <>
         <NavbarComponent genre={this.state.genre} search={this.getSearchText} />

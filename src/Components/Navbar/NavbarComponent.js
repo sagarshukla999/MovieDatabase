@@ -31,6 +31,10 @@ const navbarcomponent = props => {
       return false;
     }
   };
+
+  //var d = (document.getElementById("Genredropdown").className = "active");
+  //d.className += "active";
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -39,7 +43,7 @@ const navbarcomponent = props => {
         </NavLink>
         <Nav className="nav mr-auto">
           <NavLink to={"/upcoming"}>Upcoming</NavLink>
-          <DropdownButton title="Genre" className="active" id="Genredropdown">
+          <DropdownButton title="Genre" id="Genredropdown">
             {genres}
           </DropdownButton>
           <NavLink to={"/searchparams"}>Search</NavLink>

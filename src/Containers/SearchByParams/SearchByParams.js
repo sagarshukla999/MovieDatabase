@@ -7,6 +7,7 @@ import ShowMovies from "../../Components/ShowMovies/ShowMovies";
 import MovieBox from "../../Components/MovieBox/MovieBox";
 import { Link } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
+import NoData from "../../Components/NoData/Nodata";
 
 const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
 const baseURL = "https://api.themoviedb.org/3";
@@ -134,7 +135,7 @@ class SearchByParams extends Component {
   };
   nextPage = () => {
     let page = this.state.page;
-    if (page === this.state.totalpages) {
+    if (page === this.state.totalpages - 1) {
       return;
     } else {
       this.getpageDetails(page + 1);
@@ -162,7 +163,7 @@ class SearchByParams extends Component {
 
     let active = this.state.page;
     let items = [];
-    for (let number = 1; number <= this.state.totalpages; number++) {
+    for (let number = 1; number < this.state.totalpages; number++) {
       items.push(
         <Pagination.Item
           key={number}
@@ -177,13 +178,7 @@ class SearchByParams extends Component {
     if (!this.state.isLoaded) {
       output = <Loading />;
     } else if (this.state.content.length === 0) {
-      output = (
-        <>
-          <div>
-            <h1 style={{ color: "white" }}>NoData</h1>
-          </div>
-        </>
-      );
+      output = <NoData />;
     } else {
       output = (
         <>

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "TheMovieDatabase",
+    "TheMovieDatabase": "the-movie-database-3a144"
+  }
+}
