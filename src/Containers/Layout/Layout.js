@@ -42,8 +42,17 @@ class Layout extends Component {
       this.props.history.push("/search/name");
     }
   };
-
+  handleKeyPress = event => {
+    if (event.key === "Enter") {
+      console.log("enter press here! ");
+      //event.preventDefault();
+    }
+  };
   render() {
+    //   document.getElementById('searchForm').addEventListener('submit', function(e) {
+    //     search(document.getElementById('searchText'));
+    //     e.preventDefault()onKeyPress={this.handleKeyPress};
+    // }, false);
     return (
       <>
         <NavbarComponent genre={this.state.genre} search={this.getSearchText} />

@@ -39,6 +39,7 @@ class Movies extends Component {
           type={post.name}
           id={post.id}
           key={post.id}
+          name={post.name}
         />
       );
     });

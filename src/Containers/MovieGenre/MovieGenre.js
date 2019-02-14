@@ -50,8 +50,8 @@ class MovieGenre extends Component {
     };
     return (
       <>
-        <Link to={"/genre/" + this.props.id}>
-          <h1>
+        <Link to={"/genre/" + this.props.id + "/" + this.props.name}>
+          <h1 style={{ display: "inline-block" }}>
             <Badge style={{ color: "#66fcf1" }}>{this.props.type}</Badge>
           </h1>
         </Link>

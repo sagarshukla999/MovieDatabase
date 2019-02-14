@@ -5,14 +5,13 @@ import {
   Nav,
   Form,
   Button,
-  FormControl,
   DropdownButton,
   Dropdown
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 const navbarcomponent = props => {
-  const genres = props.genre.map((genre, i) => {
+  const genres = props.genre.map(genre => {
     let link = "/genre/" + genre.id + "/" + genre.name;
     return (
       <Dropdown.Item key={genre.id} href={link}>
@@ -25,11 +24,18 @@ const navbarcomponent = props => {
       // </p>
     );
   });
+  const handleKeyPress = e => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      props.search();
+      return false;
+    }
+  };
   return (
     <>
       <Navbar bg="dark" variant="dark">
         <NavLink to={"/"} className="appname">
-          Movie Database
+          The Movie Database
         </NavLink>
         <Nav className="nav mr-auto">
           <NavLink to={"/upcoming"}>Upcoming</NavLink>
@@ -39,11 +45,11 @@ const navbarcomponent = props => {
           <NavLink to={"/searchparams"}>Search</NavLink>
         </Nav>
         <Form inline>
-          <FormControl
+          <input
             type="text"
             id="searchmovie"
             placeholder="Search"
-            className="mr-sm-2"
+            onKeyDown={handleKeyPress}
           />
           <Button onClick={props.search} variant="outline-info">
             Search
