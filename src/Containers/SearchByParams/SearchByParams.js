@@ -8,10 +8,8 @@ import MovieBox from "../../Components/MovieBox/MovieBox";
 import { Link } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
 import NoData from "../../Components/NoData/Nodata";
-
-const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const baseURL = "https://api.themoviedb.org/3";
-const basePosterURL = "https://image.tmdb.org/t/p/original/";
+import { URL } from "../../Components/URL/URL";
+import "./SearchByParams.css";
 
 class SearchByParams extends Component {
   state = {
@@ -95,9 +93,9 @@ class SearchByParams extends Component {
     });
 
     axios(
-      baseURL +
-        "/discover/movie" +
-        key +
+      URL.url +
+        "discover/movie" +
+        URL.api_key +
         "&language=en-US" +
         searchquery +
         "&page=" +
@@ -109,7 +107,7 @@ class SearchByParams extends Component {
         });
         var sliceindex = Math.floor(filteredmovie.length / 5);
         const movies = filteredmovie.slice(0, sliceindex * 5);
-        console.log(response);
+        //console.log(response);
         if (response.data.total_pages > 25) {
           this.setState({
             content: movies,
@@ -153,11 +151,13 @@ class SearchByParams extends Component {
   render() {
     const movies = this.state.content.map(movie => {
       var posterpath;
-      posterpath = basePosterURL + movie.poster_path;
+      posterpath = URL.basePosterURLSmall + movie.poster_path;
       return (
-        <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
-          <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
-        </Link>
+        <Col md={3} xs={4} key={movie.id}>
+          <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
+            <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
+          </Link>
+        </Col>
       );
     });
 
@@ -193,20 +193,12 @@ class SearchByParams extends Component {
     }
 
     return (
-      <Row>
-        <Col xs={2} style={{ textAlign: "left" }}>
+      <Row className="Overflow1">
+        <Col xs={12} md={2} style={{ textAlign: "left" }}>
           <Searchbox genre={this.props.genre} search={this.searchParams} />
         </Col>
-        <Col
-          xs={10}
-          style={{
-            flex: "0 0 82.333333%",
-            maxWidth: "82.333333%",
-            overflowY: "auto",
-            height: "92vh"
-          }}
-        >
-          {output}
+        <Col xs={12} md={9}>
+          <div className="Overflow2">{output}</div>
         </Col>
       </Row>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavbarComponent from "../../Components/Navbar/NavbarComponent";
+import NavbarComponent from "../../Components/Navbar/Navbarold";
 import Movies from "../Movies/Movies";
 import "./Layout.css";
 import axios from "axios";
@@ -9,10 +9,7 @@ import UpcomingMovies from "../UpcomingMovies/UpcomingMovies";
 import SearchByText from "../SearchByText/SearchByText";
 import MovieByGenre from "../MoviesByGenre/MoviesByGenre";
 import SearchByParams from "../SearchByParams/SearchByParams";
-
-const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const baseURL = "https://api.themoviedb.org/3";
-const genres = "/genre/movie/list";
+import { URL } from "../../Components/URL/URL";
 
 class Layout extends Component {
   state = {
@@ -21,7 +18,7 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    axios(baseURL + genres + key + "&language=en-US")
+    axios(URL.url + "genre/movie/list" + URL.api_key + "&language=en-US")
       .then(response => {
         this.setState({
           genre: response.data.genres
@@ -42,12 +39,7 @@ class Layout extends Component {
       this.props.history.push("/search/name");
     }
   };
-  handleKeyPress = event => {
-    if (event.key === "Enter") {
-      console.log("enter press here! ");
-      //event.preventDefault();
-    }
-  };
+
   render() {
     return (
       <>

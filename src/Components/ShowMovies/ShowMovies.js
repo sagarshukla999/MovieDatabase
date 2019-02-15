@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "react-bootstrap";
+import { Row, Pagination } from "react-bootstrap";
 const ShowMovies = props => {
   let pages;
   if (props.items.length !== 0) {
@@ -24,8 +24,11 @@ const ShowMovies = props => {
       >
         {props.children}
       </div>
-      <div>{props.movies}</div>
-      {pages}
+      <div>
+        <Row>{props.movies}</Row>
+
+        {pages}
+      </div>
     </>
   );
 };

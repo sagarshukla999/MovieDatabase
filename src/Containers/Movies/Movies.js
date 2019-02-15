@@ -4,11 +4,9 @@ import MovieGenre from "../MovieGenre/MovieGenre";
 import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
+import { URL } from "../../Components/URL/URL";
+import "./Movie.css";
 
-const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const baseURL = "https://api.themoviedb.org/3";
-const trending = "/trending/movie/day";
-const basePosterURL = "https://image.tmdb.org/t/p/original/";
 class Movies extends Component {
   state = {
     trending: [],
@@ -16,7 +14,7 @@ class Movies extends Component {
   };
 
   componentDidMount() {
-    axios(baseURL + trending + key + "&language=en-US")
+    axios(URL.url + "trending/movie/day" + URL.api_key + "&language=en-US")
       .then(response => {
         let trending = response.data.results.slice(0, 10);
         this.setState({
@@ -49,9 +47,9 @@ class Movies extends Component {
     });
 
     const trending = filteredtrending.map(movie => {
-      const posterpath = basePosterURL + movie.backdrop_path;
+      const posterpath = URL.basePosterURL + movie.backdrop_path;
       return (
-        <Carousel.Item key={movie.id} style={{ height: "90vh" }}>
+        <Carousel.Item key={movie.id} className="carouselItemMedia">
           <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
             <img
               className="d-block w-100"
@@ -60,7 +58,7 @@ class Movies extends Component {
             />
           </Link>
           <Carousel.Caption>
-            <h3>{movie.original_title}</h3>
+            <h1 style={{ fontSize: "4vw" }}>{movie.original_title}</h1>
           </Carousel.Caption>
         </Carousel.Item>
       );
@@ -72,9 +70,10 @@ class Movies extends Component {
       return (
         <div style={{ height: "92vh", overflowY: "auto" }}>
           <Carousel
-            interval={4000}
+            interval={40000}
             pauseOnHover={false}
-            style={{ height: "90vh" }}
+            className="carouselMedia"
+            // style={{ height: "90vh" }}
           >
             {trending}
           </Carousel>

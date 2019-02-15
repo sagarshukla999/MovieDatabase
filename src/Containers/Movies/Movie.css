@@ -1,0 +1,16 @@
+@media (min-height: 100px) {
+  .carouselMedia {
+    height: auto;
+  }
+  .carouselItemMedia {
+    height: auto;
+  }
+}
+@media (min-height: 650px) {
+  .carouselMedia {
+    height: 90vh;
+  }
+  .carouselItemMedia {
+    height: 90vh;
+  }
+}

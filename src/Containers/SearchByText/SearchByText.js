@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Pagination } from "react-bootstrap";
+import { Pagination, Col } from "react-bootstrap";
 import MovieBox from "../../Components/MovieBox/MovieBox";
 import { Link } from "react-router-dom";
 import "../UpcomingMovies/Upcoming.css";
 import ShowMovies from "../../Components/ShowMovies/ShowMovies";
 import Loading from "../../Components/Loading/Loading";
 import NoData from "../../Components/NoData/Nodata";
-
-const key = "?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const baseURL = "https://api.themoviedb.org/3";
-const basePosterURL = "https://image.tmdb.org/t/p/original/";
+import { URL } from "../../Components/URL/URL";
 
 class SearchText extends Component {
   state = {
@@ -81,8 +78,9 @@ class SearchText extends Component {
 
   componentWillReceiveProps(nextProps) {
     const query = nextProps.searchtext;
-    const url = baseURL + "/search/movie" + key + "&query=" + query + "&page=";
-    console.log(url);
+    const url =
+      URL.url + "search/movie" + URL.api_key + "&query=" + query + "&page=";
+    //console.log(url);
     this.setState({
       url: url
     });
@@ -95,8 +93,9 @@ class SearchText extends Component {
       alert("Please enter search query");
       return;
     }
-    const url = baseURL + "/search/movie" + key + "&query=" + query + "&page=";
-    console.log(url);
+    const url =
+      URL.url + "search/movie" + URL.api_key + "&query=" + query + "&page=";
+    //console.log(url);
     this.setState({
       url: url
     });
@@ -105,11 +104,13 @@ class SearchText extends Component {
   render() {
     const movies = this.state.content.map(movie => {
       var posterpath;
-      posterpath = basePosterURL + movie.poster_path;
+      posterpath = URL.basePosterURLSmall + movie.poster_path;
       return (
-        <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
-          <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
-        </Link>
+        <Col md={2} xs={4} key={movie.id}>
+          <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
+            <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
+          </Link>
+        </Col>
       );
     });
     let active = this.state.page;

@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import "./SearchBox.css";
 const searchBox = props => {
-  console.log(props);
+  //console.log(props);
   const genres = props.genre.map(genre => {
     return (
       <option key={genre.id} value={genre.id}>
@@ -14,7 +14,7 @@ const searchBox = props => {
     <>
       <Form>
         <Form.Row>
-          <Col xs={12}>
+          <Col xs={12} md={12}>
             <div
               style={{
                 color: "darkgray",
@@ -29,27 +29,27 @@ const searchBox = props => {
               {genres}
             </Form.Control>
           </Col>
-          <Col xs={12}>
+          <Col xs={6} md={12}>
             <Form.Label className="Color">From Date</Form.Label>
             <Form.Control id="FromDate" type="date" />
           </Col>
-          <Col xs={12}>
+          <Col xs={6} md={12}>
             <Form.Label className="Color">To Date</Form.Label>
             <Form.Control id="ToDate" type="date" />
           </Col>
-          <Col xs={12}>
+          <Col xs={6} md={12}>
             <Form.Label className="Color">
               Rating Above (Range: 0-10)
             </Form.Label>
             <Form.Control id="AbvRating" type="number" min="0" max="10" />
           </Col>
-          <Col xs={12}>
+          <Col xs={6} md={12}>
             <Form.Label className="Color">
               Rating Below (Range: 0-10)
             </Form.Label>
             <Form.Control id="BelRating" type="number" min="0" max="10" />
           </Col>
-          <Col xs={12}>
+          <Col xs={6} md={12}>
             <Form.Label className="Color">SortBy</Form.Label>
             <Form.Control id="SortBy" as="select">
               <option value="popularity.asc">Popularity Ascending</option>
@@ -58,7 +58,7 @@ const searchBox = props => {
               <option value="resease_date.desc">Resease Date Descending</option>
             </Form.Control>
           </Col>
-          <Col style={{ marginTop: "10px" }}>
+          <Col style={{ marginTop: "auto" }}>
             <Button onClick={props.search} variant="outline-info">
               Search
             </Button>

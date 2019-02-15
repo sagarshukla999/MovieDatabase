@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import "./MovieBox.css";
 
 const moviebox = props => (
-  <Card className="moviebox">
+  <Card className="moviebox movieboxheight">
     <Card.Img variant="top" onLoad={props.isImageLoaded} src={props.poster} />
   </Card>
 );

@@ -1,0 +1,20 @@
+@media (min-height: 100px) {
+  .Overflow1 {
+    overflow-y: auto;
+    height: 92vh;
+  }
+  .Overflow2 {
+    overflow-y: hidden;
+    height: auto;
+  }
+}
+@media (min-height: 650px) {
+  .Overflow2 {
+    overflow-y: auto;
+    height: 92vh;
+  }
+  .Overflow1 {
+    overflow-y: hidden;
+    height: auto;
+  }
+}

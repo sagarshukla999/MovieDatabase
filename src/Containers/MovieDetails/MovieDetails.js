@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loading from "../../Components/Loading/Loading";
 import MovieDetailsDesign from "../../Components/MovieDetailsDesign/MovieDetailsDesign";
+import { URL } from "../../Components/URL/URL";
 
-const api_key = "d1a6c240f9c4dae2020c7d78070cccde";
-const url = "https://api.themoviedb.org/3/movie/";
-const basePosterURL = "https://image.tmdb.org/t/p/original/";
 class MovieDetails extends Component {
   state = {
     movieinfo: {},
@@ -15,10 +13,10 @@ class MovieDetails extends Component {
   componentDidMount = () => {
     const movieId = this.props.match.params.id;
     axios(
-      url +
+      URL.url +
+        "movie/" +
         movieId +
-        "?api_key=" +
-        api_key +
+        URL.api_key +
         "&append_to_response=videos,credits"
     )
       .then(response => {
@@ -41,8 +39,10 @@ class MovieDetails extends Component {
       return (
         <>
           <MovieDetailsDesign
-            backdrop_path={basePosterURL + this.state.movieinfo.backdrop_path}
-            poster_path={basePosterURL + this.state.movieinfo.poster_path}
+            backdrop_path={
+              URL.basePosterURL + this.state.movieinfo.backdrop_path
+            }
+            poster_path={URL.basePosterURL + this.state.movieinfo.poster_path}
             info={this.state.movieinfo}
           />
         </>

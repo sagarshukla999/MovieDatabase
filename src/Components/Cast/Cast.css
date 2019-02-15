@@ -1,0 +1,16 @@
+@media (min-height: 100px) {
+  .CardHeight {
+    height: 110px;
+  }
+  .fontsizefooter {
+    font-size: 10px;
+  }
+}
+@media (min-height: 650px) {
+  .CardHeight {
+    height: 270px;
+  }
+  .fontsizefooter {
+    font-size: 15px;
+  }
+}

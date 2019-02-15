@@ -6,17 +6,17 @@ import "./MovieGenre.css";
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { URL } from "../../Components/URL/URL";
 
-const baseURL =
-  "https://api.themoviedb.org/3/discover/movie?api_key=d1a6c240f9c4dae2020c7d78070cccde";
-const basePosterURL = "https://image.tmdb.org/t/p/w185/";
 class MovieGenre extends Component {
   state = {
     movies: []
   };
 
   componentDidMount = () => {
-    axios(baseURL + "&with_genres=" + this.props.id)
+    axios(
+      URL.url + "discover/movie" + URL.api_key + "&with_genres=" + this.props.id
+    )
       .then(response => {
         const posts = response.data.results.slice(0, 20);
         this.setState({
@@ -35,17 +35,19 @@ class MovieGenre extends Component {
 
     const posts = filteredposts.map(movie => {
       var posterpath;
-      posterpath = basePosterURL + movie.poster_path;
+      posterpath = URL.basePosterURLSmall + movie.poster_path;
       return (
         <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
+          {/* <Col xs={3} md={2}> */}
           <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
+          {/* </Col> */}
         </Link>
       );
     });
 
     let responsive = {
-      0: { items: 1 },
-      600: { items: 3 },
+      0: { items: 3 },
+      600: { items: 4 },
       1024: { items: 6 }
     };
     return (

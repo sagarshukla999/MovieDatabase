@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+
 const navbarcomponent = props => {
   const genres = props.genre.map(genre => {
     let link = "/genre/" + genre.id + "/" + genre.name;

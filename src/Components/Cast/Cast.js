@@ -1,11 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import unknown_profile from "../../Assets/unknown_profile.png";
+import { URL } from "../../Components/URL/URL";
+import "./Cast.css";
 const cast = props => {
-  const basePosterURL = "http://image.tmdb.org/t/p/original";
   var profile;
   if (props.profile) {
-    profile = basePosterURL + props.profile;
+    profile = URL.basePosterURLSmall + props.profile;
   } else {
     profile = unknown_profile;
   }
@@ -13,15 +14,12 @@ const cast = props => {
   return (
     <>
       <Card style={{ marginBottom: "10px" }}>
-        <Card.Img
-          variant="top"
-          style={{ height: "272px", width: "181px" }}
-          src={profile}
-        />
-        <Card.Body>
+        <Card.Img variant="top" className="CardHeight" src={profile} />
+        <Card.Body style={{ padding: "0px" }}>
           <blockquote className="blockquote mb-0">
             <footer
-              style={{ display: "block", fontSize: "70%", color: "#6c757d" }}
+              className={"fontsizefooter"}
+              style={{ display: "block", color: "#6c757d" }}
             >
               {props.name}
               <br />

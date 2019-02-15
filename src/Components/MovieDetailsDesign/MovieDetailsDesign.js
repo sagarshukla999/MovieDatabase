@@ -14,8 +14,7 @@ const MovieDetailsDesign = props => {
       <>
         <Iframe
           url={videourl}
-          width="700px"
-          height="400px"
+          className="VideoSize"
           id="firstTrailer"
           display="initial"
           position="relative"
@@ -41,7 +40,7 @@ const MovieDetailsDesign = props => {
   const castlist = props.info.credits.cast.slice(0, 12);
   const cast = castlist.map(actor => {
     return (
-      <Col xs={3} key={actor.cast_id}>
+      <Col xs={6} md={3} key={actor.cast_id}>
         <Cast
           character={actor.character}
           name={actor.name}
@@ -65,14 +64,40 @@ const MovieDetailsDesign = props => {
       <div className="MainContainer">
         <div
           className="ParallaxContainer"
-          style={{ backgroundImage: "url(" + props.backdrop_path + ")" }}
-        />
+          //style={{ backgroundImage: "url(" + props.backdrop_path + ")" }}
+        >
+          <img
+            src={props.backdrop_path}
+            alt="Poster"
+            style={{ width: "100%" }}
+          />
+        </div>
 
         <div className="ContentContainer">
           <div className="Content">
             <Container>
               <Row>
-                <Col xs={3}>
+                <Col xs={8} md={9}>
+                  <h1
+                    className="ChangeTitlesize"
+                    style={{ textAlign: "left", margin: "0px" }}
+                  >
+                    <b>
+                      {props.info.title.toUpperCase()}
+                      &nbsp;({releaseyear})
+                    </b>
+                  </h1>
+                </Col>
+                <Col xs={4} md={3}>
+                  <img src={star} className="starsize" alt="Rating" />
+                  <span className="sizeChange">
+                    <b>{props.info.vote_average}/10</b>
+                    &nbsp;({props.info.vote_count})
+                  </span>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4} md={3}>
                   <Card.Img variant="top" src={props.poster_path} />
 
                   <ListGroup variant="flush">
@@ -82,39 +107,25 @@ const MovieDetailsDesign = props => {
                     {crew}
                   </ListGroup>
                 </Col>
-                <Col xs={9}>
-                  <Row>
-                    <Col xs={9}>
-                      <h1 style={{ textAlign: "left", margin: "0px" }}>
-                        <b>
-                          {props.info.title.toUpperCase()}
-                          &nbsp;({releaseyear})
-                        </b>
-                      </h1>
-                    </Col>
-                    <Col xs={2}>
-                      <img
-                        src={star}
-                        style={{ height: "25px", width: "25px" }}
-                        alt="Rating"
-                      />
-                      <b>{props.info.vote_average}/10</b>
-                      &nbsp;({props.info.vote_count})
-                    </Col>
-                    <Col style={{ textAlign: "left", color: "gray" }} xs={12}>
-                      <i>
-                        {genre}|&nbsp;Tagline:&nbsp;{props.info.tagline}
-                        &nbsp;|&nbsp;
-                        {hours}h&nbsp;{minutes}min
-                      </i>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col style={{ textAlign: "left" }} xs={12}>
-                      {props.info.overview}
-                    </Col>
-                  </Row>
-
+                <Col xs={8} md={9} className="sizeChange">
+                  <Col
+                    className="changepadding"
+                    style={{ textAlign: "left", color: "gray" }}
+                    xs={12}
+                  >
+                    <i>
+                      {genre}|&nbsp;Tagline:&nbsp;{props.info.tagline}
+                      &nbsp;|&nbsp;
+                      {hours}h&nbsp;{minutes}min
+                    </i>
+                  </Col>
+                  <Col
+                    className="changepadding"
+                    style={{ textAlign: "left" }}
+                    xs={12}
+                  >
+                    {props.info.overview}
+                  </Col>
                   <Row
                     style={{
                       marginTop: "20px",
@@ -139,6 +150,11 @@ const MovieDetailsDesign = props => {
           </div>
         </div>
       </div>
+
+      {/* <div
+        style={{ backgroundImage: "url(" + props.backdrop_path + ")" }}
+        class="parallax"
+      /> */}
     </>
   );
 };
