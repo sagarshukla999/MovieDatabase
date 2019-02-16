@@ -98,7 +98,7 @@ const MovieDetailsDesign = props => {
                 <Col xs={4} md={3}>
                   <Card.Img variant="top" src={props.poster_path} />
 
-                  <ListGroup variant="flush">
+                  <ListGroup>
                     <ListGroup.Item>
                       <b>Crew</b>
                     </ListGroup.Item>

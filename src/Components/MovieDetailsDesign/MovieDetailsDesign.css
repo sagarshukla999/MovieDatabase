@@ -19,10 +19,9 @@
   padding: 10px 0;
 }
 
-/* p {
-  margin: 75px 0;
-} */
-
+.list-group-item {
+  padding: 5px !important;
+}
 .ParallaxContainer {
   display: flex;
   flex: 1 0 auto;
