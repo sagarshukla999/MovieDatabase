@@ -193,7 +193,7 @@ class SearchByParams extends Component {
     }
 
     return (
-      <Row className="Overflow1">
+      <Row className="Overflow1" style={{ overflowX: "hidden" }}>
         <Col xs={12} md={2} style={{ textAlign: "left" }}>
           <Searchbox genre={this.props.genre} search={this.searchParams} />
         </Col>

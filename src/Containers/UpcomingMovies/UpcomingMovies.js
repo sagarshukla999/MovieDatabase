@@ -114,7 +114,7 @@ class UpcomingMovies extends Component {
       return <NoData />;
     } else {
       return (
-        <div style={{ height: "92vh", overflowY: "auto" }}>
+        <div style={{ height: "92vh", overflowY: "auto", overflowX: "hidden" }}>
           <ShowMovies
             movies={movies}
             items={items}

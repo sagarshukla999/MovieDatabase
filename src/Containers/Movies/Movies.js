@@ -68,7 +68,7 @@ class Movies extends Component {
       return <Loading />;
     } else {
       return (
-        <div style={{ height: "92vh", overflowY: "auto" }}>
+        <div style={{ height: "92vh", overflowY: "auto", overflowX: "hidden" }}>
           <Carousel
             interval={40000}
             pauseOnHover={false}
