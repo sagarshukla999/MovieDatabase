@@ -132,14 +132,14 @@ const MovieDetailsDesign = props => {
                       marginTop: "20px",
                       border: "1px solid rgb(207, 210, 212)",
                       borderRadius: "10px",
-                      marginBottom: "20px"
+                      marginBottom: "20px",
+                      marginLeft: "5px"
                     }}
                   >
                     <Col
                       style={{
                         marginTop: "10px",
-                        marginBottom: "10px",
-                        marginLeft: "5px"
+                        marginBottom: "10px"
                       }}
                       xs={12}
                     >
