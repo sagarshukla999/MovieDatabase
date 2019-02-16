@@ -136,7 +136,11 @@ const MovieDetailsDesign = props => {
                     }}
                   >
                     <Col
-                      style={{ marginTop: "10px", marginBottom: "10px" }}
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "10px",
+                        marginLeft: "5px"
+                      }}
                       xs={12}
                     >
                       <b>Cast</b>
