@@ -124,11 +124,15 @@ const MovieDetailsDesign = props => {
                   >
                     {props.info.overview}
                   </Col>
+                  <Col style={{ marginTop: "25px" }} className="VideoSize">
+                    {Trailer}
+                  </Col>
                   <Row
                     style={{
                       marginTop: "20px",
                       border: "1px solid rgb(207, 210, 212)",
-                      borderRadius: "10px"
+                      borderRadius: "10px",
+                      marginBottom: "20px"
                     }}
                   >
                     <Col
@@ -138,9 +142,6 @@ const MovieDetailsDesign = props => {
                       <b>Cast</b>
                     </Col>
                     {cast}
-                  </Row>
-                  <Row style={{ marginTop: "25px" }}>
-                    <Col className="VideoSize">{Trailer}</Col>
                   </Row>
                 </Col>
               </Row>

@@ -56,7 +56,6 @@ class SearchText extends Component {
         this.setState({
           isLoaded: true
         });
-        // this.props.loaded = true;
       });
   };
   nextPage = () => {
@@ -80,7 +79,6 @@ class SearchText extends Component {
     const query = nextProps.searchtext;
     const url =
       URL.url + "search/movie" + URL.api_key + "&query=" + query + "&page=";
-    //console.log(url);
     this.setState({
       url: url
     });
@@ -95,7 +93,6 @@ class SearchText extends Component {
     }
     const url =
       URL.url + "search/movie" + URL.api_key + "&query=" + query + "&page=";
-    //console.log(url);
     this.setState({
       url: url
     });
