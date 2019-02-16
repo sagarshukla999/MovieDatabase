@@ -1,4 +1,4 @@
-@media (min-height: 100px) {
+@media (min-width: 100px) {
   .Overflow1 {
     overflow-y: auto;
     height: 92vh;
@@ -8,7 +8,7 @@
     height: auto;
   }
 }
-@media (min-height: 650px) {
+@media (min-width: 700px) {
   .Overflow2 {
     overflow-y: auto;
     height: 92vh;

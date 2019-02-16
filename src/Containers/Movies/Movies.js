@@ -73,7 +73,6 @@ class Movies extends Component {
             interval={40000}
             pauseOnHover={false}
             className="carouselMedia"
-            // style={{ height: "90vh" }}
           >
             {trending}
           </Carousel>

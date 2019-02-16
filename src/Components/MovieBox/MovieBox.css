@@ -17,12 +17,12 @@
   600: { items: 5 },
   1024: { items: 7 }
 }; */
-@media (min-height: 100px) {
+@media (min-width: 100px) {
   .movieboxheight {
     height: 27vh;
   }
 }
-@media (min-height: 650px) {
+@media (min-width: 700px) {
   .movieboxheight {
     height: 47vh;
   }

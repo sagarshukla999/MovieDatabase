@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavbarComponent from "../../Components/Navbar/Navbarold";
+import NavbarComponent from "../../Components/Navbar/Navbar";
 import Movies from "../Movies/Movies";
 import "./Layout.css";
 import axios from "axios";

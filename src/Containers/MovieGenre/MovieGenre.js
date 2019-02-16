@@ -38,9 +38,7 @@ class MovieGenre extends Component {
       posterpath = URL.basePosterURLSmall + movie.poster_path;
       return (
         <Link to={"/MovieDetails/" + movie.id} key={movie.id}>
-          {/* <Col xs={3} md={2}> */}
           <MovieBox title={movie.title} key={movie.id} poster={posterpath} />
-          {/* </Col> */}
         </Link>
       );
     });

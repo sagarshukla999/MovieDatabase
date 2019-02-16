@@ -14,7 +14,8 @@ const MovieDetailsDesign = props => {
       <>
         <Iframe
           url={videourl}
-          className="VideoSize"
+          height="100%"
+          width="100%"
           id="firstTrailer"
           display="initial"
           position="relative"
@@ -62,10 +63,7 @@ const MovieDetailsDesign = props => {
   return (
     <>
       <div className="MainContainer">
-        <div
-          className="ParallaxContainer"
-          //style={{ backgroundImage: "url(" + props.backdrop_path + ")" }}
-        >
+        <div className="ParallaxContainer">
           <img
             src={props.backdrop_path}
             alt="Poster"
@@ -142,7 +140,7 @@ const MovieDetailsDesign = props => {
                     {cast}
                   </Row>
                   <Row style={{ marginTop: "25px" }}>
-                    <Col xs={12}>{Trailer}</Col>
+                    <Col className="VideoSize">{Trailer}</Col>
                   </Row>
                 </Col>
               </Row>
@@ -150,11 +148,6 @@ const MovieDetailsDesign = props => {
           </div>
         </div>
       </div>
-
-      {/* <div
-        style={{ backgroundImage: "url(" + props.backdrop_path + ")" }}
-        class="parallax"
-      /> */}
     </>
   );
 };

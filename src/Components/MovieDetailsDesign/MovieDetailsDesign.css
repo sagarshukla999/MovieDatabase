@@ -33,7 +33,7 @@
   background-color: rgb(250, 228, 216);
 }
 
-@media (min-height: 100px) {
+@media (min-width: 100px) {
   .ParallaxContainer {
     display: none;
   }
@@ -57,11 +57,11 @@
     padding: 0px;
   }
   .VideoSize {
-    height: 280px;
+    height: 150px;
     width: 95%;
   }
 }
-@media (min-height: 650px) {
+@media (min-width: 700px) {
   .ParallaxContainer {
     display: block;
   }
@@ -85,8 +85,8 @@
     padding: 0 15px;
   }
   .VideoSize {
-    height: 500px !important;
-    width: 80% !important;
+    height: 400px;
+    width: 80%;
   }
 }
 
